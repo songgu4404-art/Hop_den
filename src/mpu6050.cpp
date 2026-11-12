@@ -12,10 +12,11 @@ static void mpuWrite(uint8_t reg, uint8_t val) {
 
 void mpuInit() {
   Wire.begin(SDA_PIN, SCL_PIN, 400000);
-  mpuWrite(0x6B, 0x00);   // thoát sleep
-  mpuWrite(0x1A, 0x03);   // DLPF ~44 Hz
-  mpuWrite(0x1B, 0x08);   // gyro ±500 dps
-  mpuWrite(0x1C, 0x10);   // accel ±8 g
+  mpuWrite(0x6B, 0x00);
+  mpuWrite(0x1A, 0x03);
+  mpuWrite(0x1B, 0x08);
+  mpuWrite(0x1C, 0x10);
+  delay(100);              // chờ cảm biến ổn định sau khi thức dậy, tránh mẫu đầu không hợp lệ
 }
 
 bool mpuRead(imu_sample_t &s) {

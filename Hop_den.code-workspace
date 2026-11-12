@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Hop_den",
+			"path": "."
+		}
+	],
+	"settings": {
+		"stm32cube-ide-clangd.path": "cube"
+	}
+}

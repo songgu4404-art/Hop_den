@@ -30,3 +30,7 @@
 #define PRIO_CTRL  4
 #define PRIO_SD    3
 #define PRIO_GSM   2
+// Hệ số quy đổi (khớp cấu hình trong mpuInit: ±8 g, ±500 °/s)
+#define ACC_LSB_PER_G     4096.0
+#define GYRO_LSB_PER_DPS  65.5
+#define GRAVITY_MS2       9.80665

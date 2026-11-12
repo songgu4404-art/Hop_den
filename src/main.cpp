@@ -20,8 +20,10 @@ void setup() {
   mpuInit();
   Serial.println("2. MPU init xong");
 
+  Serial.println("2b. SPI begin");
   SPI.begin(SD_SCK, SD_MISO, SD_MOSI, SD_CS);
-  if (!SD.begin(SD_CS, SPI, 20000000)) {
+  Serial.println("2c. SD begin");
+  if (!SD.begin(SD_CS, SPI, 4000000)) {
     Serial.println("SD fail");
     while (1) delay(1000);
   }
